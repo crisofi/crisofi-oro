@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: 'ORO <hello@crisofi.com>',
         to: contactEmail,
+        reply_to: email.trim(),
         subject: `Partnership Inquiry — ${propertyName?.trim() || name.trim()}`,
         html: `
           <div style="font-family: Georgia, serif; max-width: 520px; color: #333; line-height: 1.6;">
