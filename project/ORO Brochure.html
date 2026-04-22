@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRISOFI ORO — Marketing Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<style>
+:root {
+  --black: #0f0e0b;
+  --surface: #181613;
+  --cream: #e4d4aa;
+  --cream-dim: #b8a880;
+  --gold: #c49a3c;
+  --gold-dim: #8a6e30;
+  --font-d: 'Cormorant Garant', serif;
+  --font-b: 'Cinzel', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; }
+
+deck-stage { --ds-bg: #000; }
+
+section {
+  width: 1920px; height: 1080px;
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-d);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── shared atoms ─── */
+.eyebrow {
+  font-family: var(--font-b);
+  font-size: 13px; letter-spacing: 0.45em;
+  color: var(--gold); display: block;
+}
+.rule { width: 56px; height: 1px; background: var(--gold); }
+
+/* placeholder image tile */
+.ph {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(196,154,60,0.08),
+    rgba(196,154,60,0.08) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+  border: 1px solid rgba(196,154,60,0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(196,154,60,0.35);
+  font-family: var(--font-b);
+  font-size: 11px; letter-spacing: 0.25em;
+  text-align: center; line-height: 1.8;
+}
+
+/* jar css component */
+.jar { position: relative; }
+.jar-lid {
+  height: 36px; border-radius: 50% 50% 0 0 / 30px 30px 0 0;
+  background: linear-gradient(180deg, #2e2e2e 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255,255,255,0.06); border-bottom: none;
+}
+.jar-body {
+  border-radius: 6px 6px 22px 22px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.jar-fill {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 64%;
+  background: repeating-linear-gradient(52deg,
+    rgba(196,154,60,0.5), rgba(196,154,60,0.5) 2px,
+    transparent 2px, transparent 10px);
+  border-top: 1px solid rgba(196,154,60,0.4);
+}
+.jar-sheen {
+  position: absolute; top: 0; left: 0; width: 30%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.08) 0%, transparent 100%);
+}
+.jar-lbl {
+  position: absolute; left: 14px; right: 14px; bottom: 38px;
+  background: #0d0c09; border: 1px solid rgba(196,154,60,0.4);
+  padding: 16px 14px; text-align: center; border-radius: 3px;
+}
+.jar-lbl .b { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.4em; color: var(--cream-dim); }
+.jar-lbl .n { font-family: var(--font-d); font-size: 44px; font-weight: 300; color: var(--cream); line-height: 0.9; }
+.jar-lbl .s { font-family: var(--font-b); font-size: 7px; letter-spacing: 0.18em; color: var(--cream-dim); margin-top: 7px; }
+.jar-lbl .g { font-family: var(--font-b); font-size: 6.5px; letter-spacing: 0.13em; color: var(--gold-dim); margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 01 — COVER
+═══════════════════════════════════════════════════ -->
+<section data-label="Cover" style="display:grid; grid-template-columns:1fr 1fr;">
+
+  <!-- Left: atmospheric image -->
+  <div style="position:relative; overflow:hidden;">
+    <img src="uploads/JPEG image-4A7B-BE0E-49-0.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.65) saturate(0.85);">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, transparent 60%, var(--black) 100%);"></div>
+  </div>
+
+  <!-- Right: title block -->
+  <div style="display:flex;flex-direction:column;justify-content:center;padding:120px 100px 120px 80px;">
+    <span class="eyebrow" style="margin-bottom:40px;">CRISOFI — GOLDEN HOUR COLLECTION</span>
+    <div style="font-family:var(--font-d);font-size:160px;font-weight:300;line-height:0.85;letter-spacing:-0.02em;color:var(--cream);">ORO</div>
+    <div style="margin:44px 0 40px;width:56px;height:1px;background:var(--gold);"></div>
+    <div style="font-family:var(--font-d);font-size:22px;font-weight:300;font-style:italic;color:var(--cream-dim);line-height:1.65;max-width:420px;">
+      A concentrated golden goat's milk soak, born from the warmth of the Mediterranean.
+    </div>
+    <div style="margin-top:60px;font-family:var(--font-b);font-size:12px;letter-spacing:0.35em;color:var(--gold-dim);">
+      VANILLA &nbsp;·&nbsp; BERGAMOT &nbsp;·&nbsp; JASMINE &nbsp;·&nbsp; CEDAR
+    </div>
+    <!-- small jar illustration -->
+    <div class="jar" style="margin-top:72px;width:130px;">
+      <div class="jar-lid" style="width:140px;margin-left:-5px;"></div>
+      <div class="jar-body" style="width:130px;height:138px;">
+        <div class="jar-fill"></div>
+        <div class="jar-sheen"></div>
+        <div class="jar-lbl" style="bottom:14px;left:8px;right:8px;padding:10px 10px;">
+          <div class="b" style="font-size:7px;">CRISOFI</div>
+          <div class="n" style="font-size:30px;">ORO</div>
+          <div class="s" style="font-size:5.5px;margin-top:5px;">GOLDEN GOAT MILK SOAK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 02 — BRAND STORY
+═══════════════════════════════════════════════════ -->
+<section data-label="Brand Story" style="display:grid;grid-template-columns:1fr 1fr;">
+  <!-- left: text -->
+  <div style="display:flex;flex-direction:column;justify-content:center;padding:120px 80px 120px 120px;">
+    <span class="eyebrow" style="margin-bottom:32px;">THE STORY</span>
+    <h2 style="font-family:var(--font-d);font-size:72px;font-weight:300;line-height:1.1;margin-bottom:48px;">
+      Gilded light.<br><em style="color:var(--gold);">Timeless ritual.</em>
+    </h2>
+    <div class="rule" style="margin-bottom:48px;"></div>
+    <p style="font-size:22px;line-height:1.85;color:var(--cream-dim);max-width:520px;">
+      Inspired by the warm, gilded light of the Mediterranean golden hour. ORO is a concentrated milk bath designed for deep restoration.
+    </p>
+    <p style="font-size:22px;line-height:1.85;color:var(--cream-dim);max-width:520px;margin-top:28px;">
+      Pure, creamy goat's milk — a timeless beauty ritual — melts into the water to create a silken, skin-softening veil.
+    </p>
+    <p style="font-size:22px;line-height:1.85;color:var(--cream-dim);max-width:520px;margin-top:28px;font-style:italic;">
+      Refined, intentional, and evocative of a private villa retreat.
+    </p>
+  </div>
+  <!-- right: full-bleed image -->
+  <div style="position:relative;overflow:hidden;">
+    <img src="uploads/JPEG image-4A7B-BE0E-49-0.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:40% center;filter:brightness(0.7) saturate(0.8);">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--black) 0%, transparent 20%);"></div>
+    <!-- label overlay -->
+    <div style="position:absolute;bottom:60px;right:60px;text-align:right;">
+      <div style="font-family:var(--font-b);font-size:10px;letter-spacing:0.35em;color:rgba(196,154,60,0.6);">ORO — CRISOFI</div>
+      <div style="font-family:var(--font-d);font-size:18px;font-style:italic;color:rgba(228,212,170,0.5);margin-top:6px;">Golden Goat's Milk Soak</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 03 — PRODUCT IN HOTEL BATHROOM
+═══════════════════════════════════════════════════ -->
+<section data-label="Hotel Bathroom" style="position:relative;">
+  <!-- full-bleed image -->
+  <img src="uploads/JPEG image-4A7B-BE0E-49-0.jpeg"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.5) saturate(0.75);">
+
+  <!-- dark gradient overlay -->
+  <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(15,14,11,0.92) 0%, rgba(15,14,11,0.3) 60%, transparent 100%);"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(15,14,11,0.7) 0%, transparent 50%);"></div>
+
+  <!-- content -->
+  <div style="position:absolute;bottom:100px;left:120px;max-width:680px;">
+    <span class="eyebrow" style="margin-bottom:28px;display:block;">THE SETTING</span>
+    <h2 style="font-family:var(--font-d);font-size:80px;font-weight:300;line-height:1.05;margin-bottom:40px;">
+      Where silence<br>meets the bath.
+    </h2>
+    <div class="rule" style="margin-bottom:36px;"></div>
+    <p style="font-size:22px;font-style:italic;color:var(--cream-dim);line-height:1.75;max-width:540px;">
+      Placed beside a stone soaking tub overlooking mountain valleys. ORO transforms the private bath into a ritual — unhurried, restorative, unforgettable.
+    </p>
+  </div>
+
+  <!-- top-right badge -->
+  <div style="position:absolute;top:80px;right:100px;text-align:center;border:1px solid rgba(196,154,60,0.3);padding:28px 40px;">
+    <div style="font-family:var(--font-b);font-size:10px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:12px;">CRISOFI</div>
+    <div style="font-family:var(--font-d);font-size:68px;font-weight:300;color:var(--cream);line-height:0.9;">ORO</div>
+    <div style="width:36px;height:1px;background:var(--gold);margin:16px auto;"></div>
+    <div style="font-family:var(--font-b);font-size:8px;letter-spacing:0.2em;color:var(--cream-dim);">GOLDEN GOAT MILK SOAK</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 04 — SCENT NOTES
+═══════════════════════════════════════════════════ -->
+<section data-label="Scent Notes" style="background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 120px;">
+  <span class="eyebrow" style="text-align:center;margin-bottom:32px;">FRAGRANCE NOTES</span>
+  <h2 style="font-family:var(--font-d);font-size:68px;font-weight:300;text-align:center;margin-bottom:80px;">Four notes. One immersion.</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;width:100%;max-width:1600px;">
+
+    <!-- Vanilla -->
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:64px 52px;">
+      <div style="font-family:var(--font-b);font-size:10px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:28px;">01</div>
+      <div style="font-family:var(--font-d);font-size:44px;font-weight:300;margin-bottom:24px;line-height:1;">Vanilla</div>
+      <div style="font-family:var(--font-d);font-size:18px;font-style:italic;color:var(--cream-dim);line-height:1.8;">Warm, resinous heart. A sense of skin-close comfort, both sensual and grounding.</div>
+    </div>
+
+    <!-- Bergamot -->
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:64px 52px;">
+      <div style="font-family:var(--font-b);font-size:10px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:28px;">02</div>
+      <div style="font-family:var(--font-d);font-size:44px;font-weight:300;margin-bottom:24px;line-height:1;">Bergamot</div>
+      <div style="font-family:var(--font-d);font-size:18px;font-style:italic;color:var(--cream-dim);line-height:1.8;">Citrus-bright, with a sunlit edge. The first note of a Mediterranean morning.</div>
+    </div>
+
+    <!-- Jasmine -->
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:64px 52px;">
+      <div style="font-family:var(--font-b);font-size:10px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:28px;">03</div>
+      <div style="font-family:var(--font-d);font-size:44px;font-weight:300;margin-bottom:24px;line-height:1;">Jasmine</div>
+      <div style="font-family:var(--font-d);font-size:18px;font-style:italic;color:var(--cream-dim);line-height:1.8;">White floral, night-blooming. A breath of terraced hillsides after dusk.</div>
+    </div>
+
+    <!-- Cedar -->
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:64px 52px;">
+      <div style="font-family:var(--font-b);font-size:10px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:28px;">04</div>
+      <div style="font-family:var(--font-d);font-size:44px;font-weight:300;margin-bottom:24px;line-height:1;">Cedar</div>
+      <div style="font-family:var(--font-d);font-size:18px;font-style:italic;color:var(--cream-dim);line-height:1.8;">Aged, woody, enduring. The base that anchors the ritual in quiet depth.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 05 — SPA / WELLNESS ENVIRONMENT (placeholder)
+═══════════════════════════════════════════════════ -->
+<section data-label="Spa Setting" style="display:grid;grid-template-columns:1fr 1fr;">
+
+  <!-- Left: placeholder for spa imagery -->
+  <div class="ph" style="height:100%;flex-direction:column;gap:12px;font-size:12px;">
+    <div style="width:60px;height:60px;border:1px solid rgba(196,154,60,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+      <div style="width:20px;height:20px;border:1px solid rgba(196,154,60,0.5);border-radius:50%;"></div>
+    </div>
+    <div>SPA / WELLNESS<br>ENVIRONMENT PHOTO</div>
+    <div style="font-size:9px;color:rgba(196,154,60,0.2);">Drop hero image here</div>
+  </div>
+
+  <!-- Right: content -->
+  <div style="display:flex;flex-direction:column;justify-content:center;padding:120px 100px 120px 80px;background:var(--surface);">
+    <span class="eyebrow" style="margin-bottom:32px;">SPA INTEGRATION</span>
+    <h2 style="font-family:var(--font-d);font-size:68px;font-weight:300;line-height:1.1;margin-bottom:44px;">
+      A signature<br><em style="color:var(--gold);">treatment,</em><br>unmistakable.
+    </h2>
+    <div class="rule" style="margin-bottom:44px;"></div>
+    <p style="font-size:20px;line-height:1.9;color:var(--cream-dim);max-width:500px;">
+      ORO integrates seamlessly into spa menus as a standalone milky bath ritual or as a complement to body treatments. The golden crystals dissolve on contact, transforming water into a nourishing, opaque soak.
+    </p>
+    <p style="font-size:20px;line-height:1.9;color:var(--cream-dim);max-width:500px;margin-top:28px;font-style:italic;">
+      An experience guests will request again.
+    </p>
+    <!-- specs -->
+    <div style="margin-top:56px;display:flex;gap:48px;">
+      <div>
+        <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.3em;color:var(--gold-dim);margin-bottom:10px;">FORMAT</div>
+        <div style="font-family:var(--font-d);font-size:18px;color:var(--cream-dim);">Golden powder crystals</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.3em;color:var(--gold-dim);margin-bottom:10px;">SIZE</div>
+        <div style="font-family:var(--font-d);font-size:18px;color:var(--cream-dim);">8 oz / 227 g</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.3em;color:var(--gold-dim);margin-bottom:10px;">MOQ</div>
+        <div style="font-family:var(--font-d);font-size:18px;color:var(--cream-dim);">By arrangement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 06 — IN-ROOM AMENITY
+═══════════════════════════════════════════════════ -->
+<section data-label="In-Room Amenity" style="background:var(--black);">
+
+  <!-- full bleed split: 60/40 -->
+  <div style="display:grid;grid-template-columns:3fr 2fr;height:100%;">
+
+    <!-- text side -->
+    <div style="display:flex;flex-direction:column;justify-content:center;padding:120px 80px 120px 120px;">
+      <span class="eyebrow" style="margin-bottom:32px;">IN-ROOM AMENITY</span>
+      <h2 style="font-family:var(--font-d);font-size:80px;font-weight:300;line-height:1.05;margin-bottom:48px;">
+        One jar.<br><em style="color:var(--cream-dim);">A memory</em><br>that stays.
+      </h2>
+      <div class="rule" style="margin-bottom:44px;"></div>
+      <p style="font-size:22px;line-height:1.85;color:var(--cream-dim);max-width:560px;">
+        A single jar of ORO placed beside the bath is an understated act of hospitality — one that guests notice, use, and remember long after checkout. It elevates the bathroom from functional to extraordinary.
+      </p>
+      <!-- three pillars -->
+      <div style="margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-top:1px solid rgba(196,154,60,0.12);padding-top:48px;">
+        <div>
+          <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.35em;color:var(--gold);margin-bottom:12px;">RITUAL</div>
+          <div style="font-size:17px;color:var(--cream-dim);line-height:1.7;">Turns the bath into an intentional moment of restoration.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.35em;color:var(--gold);margin-bottom:12px;">SCENT</div>
+          <div style="font-size:17px;color:var(--cream-dim);line-height:1.7;">A sensory signature guests associate with your property.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.35em;color:var(--gold);margin-bottom:12px;">RECALL</div>
+          <div style="font-size:17px;color:var(--cream-dim);line-height:1.7;">Scent-memory is the most powerful trigger for brand loyalty.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jar visual -->
+    <div style="display:flex;align-items:center;justify-content:center;background:var(--surface);border-left:1px solid rgba(196,154,60,0.08);">
+      <div class="jar" style="width:260px;">
+        <div class="jar-lid" style="width:280px;margin-left:-10px;height:40px;"></div>
+        <div class="jar-body" style="width:260px;height:290px;">
+          <div class="jar-fill"></div>
+          <div class="jar-sheen"></div>
+          <div class="jar-lbl">
+            <div class="b">CRISOFI</div>
+            <div class="n">ORO</div>
+            <div class="s">GOLDEN GOAT MILK SOAK</div>
+            <div class="g">VANILLA · BERGAMOT · JASMINE · CEDAR</div>
+          </div>
+        </div>
+        <!-- shadow -->
+        <div style="width:180px;height:12px;margin:0 auto;background:radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%);margin-top:4px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 07 — GIFTING / WELCOME BOX
+═══════════════════════════════════════════════════ -->
+<section data-label="Gifting" style="display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:var(--surface);padding:80px 160px;">
+
+  <span class="eyebrow" style="margin-bottom:32px;">BESPOKE GIFTING</span>
+  <h2 style="font-family:var(--font-d);font-size:88px;font-weight:300;line-height:1.05;max-width:1200px;margin-bottom:48px;">
+    The gift of the <em style="color:var(--gold);">golden hour.</em>
+  </h2>
+  <div class="rule" style="margin:0 auto 48px;"></div>
+  <p style="font-size:24px;line-height:1.8;color:var(--cream-dim);max-width:760px;margin-bottom:80px;">
+    ORO is available in custom-packaged sets for welcome amenity boxes, wellness programs, and curated guest gifts. Branding, weight, and presentation can be tailored to your property.
+  </p>
+
+  <!-- three package types -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;width:100%;max-width:1400px;">
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:60px 52px;text-align:left;">
+      <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:24px;">01</div>
+      <div style="font-family:var(--font-d);font-size:32px;font-weight:300;margin-bottom:20px;">Welcome Box</div>
+      <div style="font-size:17px;color:var(--cream-dim);line-height:1.8;">A single jar with a hand-pressed card. Placed in-room before arrival — an immediate, wordless message of care.</div>
+    </div>
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:60px 52px;text-align:left;">
+      <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:24px;">02</div>
+      <div style="font-family:var(--font-d);font-size:32px;font-weight:300;margin-bottom:20px;">Wellness Kit</div>
+      <div style="font-size:17px;color:var(--cream-dim);line-height:1.8;">ORO paired with a stone tray and a small cedar wood scoop — a curated ritual set for the discerning guest.</div>
+    </div>
+    <div style="background:var(--black);border:1px solid rgba(196,154,60,0.1);padding:60px 52px;text-align:left;">
+      <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.4em;color:var(--gold-dim);margin-bottom:24px;">03</div>
+      <div style="font-family:var(--font-d);font-size:32px;font-weight:300;margin-bottom:20px;">Co-Branded</div>
+      <div style="font-size:17px;color:var(--cream-dim);line-height:1.8;">Custom label featuring your property's name alongside CRISOFI. A seamless extension of your amenity identity.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 08 — CLOSING / CONTACT
+═══════════════════════════════════════════════════ -->
+<section data-label="Contact" style="display:grid;grid-template-columns:1fr 1fr;">
+
+  <!-- Left: image -->
+  <div style="position:relative;overflow:hidden;">
+    <img src="uploads/JPEG image-4A7B-BE0E-49-0.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:20% center;filter:brightness(0.5) saturate(0.75);">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, transparent 70%, var(--black) 100%);"></div>
+  </div>
+
+  <!-- Right: contact -->
+  <div style="display:flex;flex-direction:column;justify-content:center;padding:120px 100px 120px 80px;">
+    <span class="eyebrow" style="margin-bottom:40px;">PARTNER WITH CRISOFI</span>
+    <h2 style="font-family:var(--font-d);font-size:72px;font-weight:300;line-height:1.1;margin-bottom:48px;">
+      For the<br><em style="color:var(--gold);">discerning</em><br>property.
+    </h2>
+    <div class="rule" style="margin-bottom:48px;"></div>
+    <p style="font-size:20px;line-height:1.9;color:var(--cream-dim);max-width:480px;margin-bottom:48px;">
+      ORO is available exclusively for luxury hotels, private villas, and wellness resorts. We partner selectively — where the environment matches the intention.
+    </p>
+    <!-- contact block -->
+    <div style="border-top:1px solid rgba(196,154,60,0.15);padding-top:44px;display:flex;flex-direction:column;gap:20px;">
+      <div>
+        <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.35em;color:var(--gold-dim);margin-bottom:8px;">INQUIRIES</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:var(--cream-dim);">hello@crisofi.com</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-b);font-size:9px;letter-spacing:0.35em;color:var(--gold-dim);margin-bottom:8px;">BRAND</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:var(--cream-dim);">crisofi.com</div>
+      </div>
+    </div>
+    <!-- large wordmark -->
+    <div style="margin-top:72px;display:flex;align-items:baseline;gap:20px;">
+      <div style="font-family:var(--font-b);font-size:14px;letter-spacing:0.4em;color:var(--gold-dim);">CRISOFI</div>
+      <div style="width:1px;height:20px;background:rgba(196,154,60,0.3);"></div>
+      <div style="font-family:var(--font-d);font-size:14px;letter-spacing:0.25em;font-style:italic;color:var(--cream-dim);">Golden Hour Collection</div>
+    </div>
+  </div>
+</section>
+
+</deck-stage>
+</body>
+</html>

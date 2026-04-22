@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRISOFI ORO — Label Design Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Cormorant Garant', serif; background: #f0eee9; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+/* ── Shared jar wrapper ── */
+function JarMockup({ label, bg = '#111009', lidColor = '#1a1a1a', crystalColor = 'rgba(196,154,60,0.45)', width = 320, height = 360 }) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0, paddingTop: 20 }}>
+      {/* Lid */}
+      <div style={{
+        width: width * 1.06, height: 32, borderRadius: '50% 50% 0 0 / 28px 28px 0 0',
+        background: `linear-gradient(180deg, ${lidColor} 0%, #0a0a0a 100%)`,
+        border: '1px solid rgba(255,255,255,0.06)', borderBottom: 'none',
+        boxShadow: '0 -2px 8px rgba(0,0,0,0.4)'
+      }} />
+      {/* Body */}
+      <div style={{
+        width, height,
+        background: `linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%)`,
+        border: '1px solid rgba(255,255,255,0.12)',
+        borderRadius: '4px 4px 18px 18px',
+        position: 'relative', overflow: 'hidden',
+        boxShadow: '0 8px 40px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.04)'
+      }}>
+        {/* Crystal fill */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: '62%',
+          background: `repeating-linear-gradient(52deg, ${crystalColor}, ${crystalColor} 2px, transparent 2px, transparent 9px)`,
+          borderTop: `1px solid ${crystalColor}`
+        }} />
+        {/* Glass sheen */}
+        <div style={{
+          position: 'absolute', top: 0, left: 0, width: '35%', height: '100%',
+          background: 'linear-gradient(to right, rgba(255,255,255,0.07) 0%, transparent 100%)'
+        }} />
+        {label}
+      </div>
+    </div>
+  );
+}
+
+/* ── LABEL A: Classic Obsidian (existing style) ── */
+function LabelA() {
+  return (
+    <JarMockup crystalColor="rgba(196,154,60,0.5)" label={
+      <div style={{
+        position: 'absolute', bottom: 36, left: 18, right: 18,
+        background: '#0d0c09',
+        border: '1px solid rgba(196,154,60,0.4)',
+        padding: '22px 20px 18px', textAlign: 'center', borderRadius: 3
+      }}>
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 9, letterSpacing: '0.45em', color: '#b8a880', marginBottom: 8 }}>CRISOFI</div>
+        <div style={{ fontFamily: 'Cormorant Garant, serif', fontSize: 52, fontWeight: 300, color: '#e4d4aa', lineHeight: 0.9, letterSpacing: '-0.01em' }}>ORO</div>
+        <div style={{ width: 40, height: 1, background: 'rgba(196,154,60,0.5)', margin: '12px auto 10px' }} />
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7, letterSpacing: '0.2em', color: '#b8a880', marginBottom: 5 }}>GOLDEN GOAT MILK SOAK</div>
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 6.5, letterSpacing: '0.15em', color: 'rgba(196,154,60,0.8)', marginBottom: 8 }}>VANILLA · BERGAMOT · JASMINE · CEDAR</div>
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7, letterSpacing: '0.2em', color: '#7a6e58' }}>8 OZ / 227 G</div>
+      </div>
+    } />
+  );
+}
+
+/* ── LABEL B: Warm Amber ── */
+function LabelB() {
+  return (
+    <JarMockup
+      lidColor="#2a1f10"
+      crystalColor="rgba(210,140,40,0.55)"
+      label={
+        <div style={{
+          position: 'absolute', bottom: 36, left: 18, right: 18,
+          background: 'linear-gradient(160deg, #1e1205 0%, #2d1f0a 100%)',
+          border: '1px solid rgba(210,160,60,0.5)',
+          padding: '22px 20px 18px', textAlign: 'center', borderRadius: 3
+        }}>
+          {/* outer gold rule */}
+          <div style={{ position: 'absolute', inset: 5, border: '1px solid rgba(210,160,60,0.2)', borderRadius: 1, pointerEvents: 'none' }} />
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 9, letterSpacing: '0.45em', color: 'rgba(210,160,60,0.7)', marginBottom: 10 }}>CRISOFI</div>
+          <div style={{ fontFamily: 'Cormorant Garant, serif', fontSize: 52, fontWeight: 300, color: '#f0d090', lineHeight: 0.9, letterSpacing: '-0.01em' }}>ORO</div>
+          <div style={{ width: 40, height: 1, background: 'rgba(210,160,60,0.6)', margin: '12px auto 10px' }} />
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7, letterSpacing: '0.2em', color: '#c8a860', marginBottom: 5 }}>GOLDEN GOAT MILK SOAK</div>
+          <div style={{ fontFamily: 'Cormorant Garant, serif', fontStyle: 'italic', fontSize: 10, letterSpacing: '0.1em', color: 'rgba(210,160,60,0.7)', marginBottom: 8 }}>Vanilla · Bergamot · Jasmine · Cedar</div>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7, letterSpacing: '0.2em', color: 'rgba(210,160,60,0.4)' }}>8 OZ / 227 G</div>
+        </div>
+      }
+    />
+  );
+}
+
+/* ── LABEL C: Pale Stone ── */
+function LabelC() {
+  return (
+    <JarMockup
+      bg="#e8e0d0"
+      lidColor="#3a3530"
+      crystalColor="rgba(196,154,60,0.6)"
+      label={
+        <div style={{
+          position: 'absolute', bottom: 36, left: 18, right: 18,
+          background: '#f2ede3',
+          border: '1px solid rgba(50,40,30,0.2)',
+          padding: '22px 20px 18px', textAlign: 'center', borderRadius: 3
+        }}>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 9, letterSpacing: '0.45em', color: '#6a5f48', marginBottom: 10 }}>CRISOFI</div>
+          <div style={{ fontFamily: 'Cormorant Garant, serif', fontSize: 52, fontWeight: 300, color: '#2a2218', lineHeight: 0.9, letterSpacing: '-0.01em' }}>ORO</div>
+          <div style={{ width: 40, height: 1, background: 'rgba(180,140,60,0.7)', margin: '12px auto 10px' }} />
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7, letterSpacing: '0.2em', color: '#4a4235', marginBottom: 5 }}>GOLDEN GOAT MILK SOAK</div>
+          <div style={{ fontFamily: 'Cormorant Garant, serif', fontStyle: 'italic', fontSize: 10.5, letterSpacing: '0.08em', color: '#8a7a60', marginBottom: 8 }}>Vanilla · Bergamot · Jasmine · Cedar</div>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7, letterSpacing: '0.2em', color: '#aaa090' }}>8 OZ / 227 G</div>
+        </div>
+      }
+    />
+  );
+}
+
+/* ── LABEL D: Minimal Line ── */
+function LabelD() {
+  return (
+    <JarMockup
+      lidColor="#222"
+      crystalColor="rgba(196,154,60,0.45)"
+      label={
+        <div style={{
+          position: 'absolute', bottom: 36, left: 18, right: 18,
+          background: 'transparent',
+          borderTop: '1px solid rgba(196,154,60,0.6)',
+          borderBottom: '1px solid rgba(196,154,60,0.6)',
+          padding: '18px 16px 16px', textAlign: 'center'
+        }}>
+          <div style={{ fontFamily: 'Cormorant Garant, serif', fontSize: 58, fontWeight: 300, color: '#e4d4aa', lineHeight: 0.85, letterSpacing: '0.05em' }}>ORO</div>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 7.5, letterSpacing: '0.45em', color: 'rgba(196,154,60,0.65)', marginTop: 12, marginBottom: 6 }}>CRISOFI</div>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 6, letterSpacing: '0.2em', color: '#786a50' }}>GOLDEN GOAT MILK SOAK</div>
+        </div>
+      }
+    />
+  );
+}
+
+/* ── Flat Label (print-style) previews ── */
+function FlatLabel({ variant }) {
+  const variants = {
+    A: { bg: '#0d0c09', text: '#e4d4aa', sub: '#b8a880', accent: 'rgba(196,154,60,0.5)', border: 'rgba(196,154,60,0.4)' },
+    B: { bg: 'linear-gradient(160deg, #1e1205 0%, #2d1f0a 100%)', text: '#f0d090', sub: '#c8a860', accent: 'rgba(210,160,60,0.6)', border: 'rgba(210,160,60,0.5)' },
+    C: { bg: '#f2ede3', text: '#2a2218', sub: '#6a5f48', accent: 'rgba(180,140,60,0.7)', border: 'rgba(50,40,30,0.2)' },
+    D: { bg: '#0d0c09', text: '#e4d4aa', sub: 'rgba(196,154,60,0.65)', accent: 'rgba(196,154,60,0.6)', border: 'rgba(196,154,60,0.6)' },
+  };
+  const v = variants[variant];
+  const isD = variant === 'D';
+  return (
+    <div style={{
+      width: 400, height: 240,
+      background: v.bg,
+      border: `1px solid ${v.border}`,
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+      gap: 0, padding: 32, position: 'relative', borderRadius: 2
+    }}>
+      {variant === 'A' && <div style={{ position: 'absolute', inset: 8, border: '1px solid rgba(196,154,60,0.15)', borderRadius: 1, pointerEvents: 'none' }} />}
+      {!isD && <div style={{ fontFamily: 'Cinzel, serif', fontSize: 11, letterSpacing: '0.45em', color: v.sub, marginBottom: 10 }}>CRISOFI</div>}
+      <div style={{ fontFamily: 'Cormorant Garant, serif', fontSize: 80, fontWeight: 300, color: v.text, lineHeight: 0.85, letterSpacing: '-0.01em' }}>ORO</div>
+      {isD && <div style={{ fontFamily: 'Cinzel, serif', fontSize: 9, letterSpacing: '0.5em', color: v.sub, marginTop: 14, marginBottom: 4 }}>CRISOFI</div>}
+      <div style={{ width: 48, height: 1, background: v.accent, margin: isD ? '0 auto 10px' : '14px auto 10px' }} />
+      <div style={{ fontFamily: 'Cinzel, serif', fontSize: 8.5, letterSpacing: '0.25em', color: v.sub, marginBottom: isD ? 0 : 5 }}>GOLDEN GOAT MILK SOAK</div>
+      {!isD && <div style={{ fontFamily: 'Cormorant Garant, serif', fontStyle: 'italic', fontSize: 13, color: v.sub, letterSpacing: '0.08em', marginBottom: 8 }}>Vanilla · Bergamot · Jasmine · Cedar</div>}
+      {!isD && <div style={{ fontFamily: 'Cinzel, serif', fontSize: 8, letterSpacing: '0.2em', color: variant === 'C' ? '#aaa090' : 'rgba(150,130,90,0.7)' }}>8 OZ / 227 G</div>}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <DesignCanvas>
+      <DCSection id="jars" title="Label Options — On Jar" subtitle="Four design directions for ORO. Click any artboard to focus.">
+        <DCArtboard id="jar-a" label="A · Classic Obsidian" width={320} height={430}>
+          <div style={{ background: '#181613', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <LabelA />
+          </div>
+        </DCArtboard>
+        <DCArtboard id="jar-b" label="B · Warm Amber" width={320} height={430}>
+          <div style={{ background: '#0f0a04', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <LabelB />
+          </div>
+        </DCArtboard>
+        <DCArtboard id="jar-c" label="C · Pale Stone" width={320} height={430}>
+          <div style={{ background: '#d8d0c0', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <LabelC />
+          </div>
+        </DCArtboard>
+        <DCArtboard id="jar-d" label="D · Minimal Line" width={320} height={430}>
+          <div style={{ background: '#181613', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <LabelD />
+          </div>
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="flat" title="Label Flat Views — Print Ready" subtitle="Each label shown flat, 400 × 240 — suitable for print-on-demand or digital use.">
+        <DCArtboard id="flat-a" label="A · Classic Obsidian" width={440} height={280}>
+          <div style={{ background: '#181613', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FlatLabel variant="A" />
+          </div>
+        </DCArtboard>
+        <DCArtboard id="flat-b" label="B · Warm Amber" width={440} height={280}>
+          <div style={{ background: '#0f0a04', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FlatLabel variant="B" />
+          </div>
+        </DCArtboard>
+        <DCArtboard id="flat-c" label="C · Pale Stone" width={440} height={280}>
+          <div style={{ background: '#d8d0c0', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FlatLabel variant="C" />
+          </div>
+        </DCArtboard>
+        <DCArtboard id="flat-d" label="D · Minimal Line" width={440} height={280}>
+          <div style={{ background: '#181613', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FlatLabel variant="D" />
+          </div>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

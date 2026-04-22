@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORO Label A Export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300&family=Cinzel:wght@400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 960px; height: 576px; background: #0d0c09; overflow: hidden; }
+
+.label {
+  width: 960px; height: 576px;
+  background: #0d0c09;
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0;
+}
+
+/* outer border */
+.label::before {
+  content: '';
+  position: absolute; inset: 3px;
+  border: 1px solid rgba(196,154,60,0.45);
+  pointer-events: none;
+}
+/* inner border */
+.label::after {
+  content: '';
+  position: absolute; inset: 16px;
+  border: 1px solid rgba(196,154,60,0.12);
+  pointer-events: none;
+}
+
+.brand {
+  font-family: 'Cormorant Garant', serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.55em;
+  color: #b8a880;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.oro {
+  font-family: 'Cormorant Garant', serif;
+  font-weight: 300;
+  font-size: 220px;
+  color: #e4d4aa;
+  line-height: 0.85;
+  letter-spacing: -0.01em;
+}
+
+.rule {
+  width: 96px; height: 1px;
+  background: rgba(196,154,60,0.55);
+  margin: 24px 0 22px;
+}
+
+.soak {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 0.35em;
+  color: #b8a880;
+  margin-bottom: 12px;
+}
+
+.notes {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  color: rgba(196,154,60,0.8);
+  margin-bottom: 14px;
+}
+
+.size {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: rgba(140,120,80,0.65);
+}
+</style>
+</head>
+<body>
+<div class="label">
+  <div class="brand">Crisofi</div>
+  <div class="oro">ORO</div>
+  <div class="rule"></div>
+  <div class="soak">GOLDEN GOAT MILK SOAK</div>
+  <div class="notes">VANILLA &nbsp;/&nbsp; BERGAMOT &nbsp;/&nbsp; JASMINE &nbsp;/&nbsp; CEDAR</div>
+  <div class="size">8 OZ &nbsp;|&nbsp; 227 G</div>
+</div>
+</body>
+</html>

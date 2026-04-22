@@ -1,0 +1,30 @@
+<svg width="960" height="576" viewBox="0 0 960 576" xmlns="http://www.w3.org/2000/svg">
+
+  
+  <rect width="960" height="576" fill="#0d0c09"></rect>
+
+  
+  <rect x="3" y="3" width="954" height="570" fill="none" stroke="#c49a3c" stroke-width="1.2" stroke-opacity="0.5" rx="2"></rect>
+
+  
+  <rect x="16" y="16" width="928" height="544" fill="none" stroke="#c49a3c" stroke-width="0.8" stroke-opacity="0.14" rx="1"></rect>
+
+  
+  <text x="480" y="106" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-weight="400" font-size="22" fill="#b8a880" letter-spacing="14">CRISOFI</text>
+
+  
+  <text x="480" y="338" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-weight="300" font-size="228" fill="#e4d4aa" letter-spacing="-2">ORO</text>
+
+  
+  <line x1="432" y1="370" x2="528" y2="370" stroke="#c49a3c" stroke-width="1.2" stroke-opacity="0.6"></line>
+
+  
+  <text x="480" y="418" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="17" fill="#b8a880" letter-spacing="5">GOLDEN GOAT MILK SOAK</text>
+
+  
+  <text x="480" y="458" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="14" fill="#c49a3c" fill-opacity="0.82" letter-spacing="3">VANILLA / BERGAMOT / JASMINE / CEDAR</text>
+
+  
+  <text x="480" y="514" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="13" fill="#8c7830" fill-opacity="0.65" letter-spacing="5">8 OZ  |  227 G</text>
+
+</svg>
