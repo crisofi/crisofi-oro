@@ -12,7 +12,6 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <span className="footer-copy">© 2026 CRISOFI — ALL RIGHTS RESERVED</span>
-        <span className="footer-copy">hello@crisofi.com</span>
       </div>
     </footer>
   );
