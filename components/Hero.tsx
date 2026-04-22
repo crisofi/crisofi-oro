@@ -17,7 +17,7 @@ export default function Hero() {
             alt="ORO golden milk soak in a luxury bathroom"
             fill
             priority
-            style={{ objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) saturate(0.9)', opacity: 0, animation: 'fadeIn 2s 0.2s forwards' }}
+            style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(0.9)', opacity: 0, animation: 'fadeIn 2s 0.2s forwards' }}
           />
           <div className="hero-img-overlay" />
         </div>

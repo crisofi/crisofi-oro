@@ -415,11 +415,11 @@ footer {
   .hero-right {
     display: block;
     order: 1;
-    height: 60vw;
+    height: 80vw;
   }
   .hero-img-wrap { min-height: unset; height: 100%; }
   .hero-img-overlay {
-    background: linear-gradient(to bottom, transparent 40%, var(--black) 100%);
+    background: linear-gradient(to bottom, transparent 60%, var(--black) 100%);
   }
   .hero-left {
     order: 2;
