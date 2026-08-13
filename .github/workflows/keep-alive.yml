@@ -2,21 +2,35 @@ name: Keep Supabase Active
 
 on:
   schedule:
+    # Runs at 12:00 UTC every Monday and Thursday
     - cron: '0 12 * * 1,4'
   workflow_dispatch:
 
 jobs:
   ping-supabase:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write # Grants permission to push keep-alive updates back to repo
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Ping Supabase
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}/rest/v1/" \
-            -H "apikey: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}")
+            "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}/auth/v1/health" \
+            -H "apikey: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}")
+          
           echo "HTTP status: $STATUS"
-          if [[ "$STATUS" -lt 200 || "$STATUS" -ge 300 ]]; then
+          if [[ "$STATUS" -ne 200 ]]; then
             echo "Ping failed with status $STATUS"
             exit 1
           fi
+
+      - name: Reset 60-Day GitHub Inactivity Timer
+        run: |
+          date -u > .github/last_ping.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/last_ping.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: reset GitHub inactivity timer" && git push)
