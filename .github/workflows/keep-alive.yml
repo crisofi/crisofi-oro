@@ -10,7 +10,7 @@ jobs:
   ping-supabase:
     runs-on: ubuntu-22.04
     permissions:
-      contents: write # Grants permission to push keep-alive updates back to repo
+      contents: write # Allows the workflow to push the timestamp commit
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
