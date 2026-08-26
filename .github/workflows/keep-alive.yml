@@ -2,28 +2,34 @@ name: Keep Supabase Active
 
 on:
   schedule:
-    # Runs at 12:00 UTC every Monday and Thursday
-    - cron: '0 12 * * 1,4'
+    # Runs daily at 12:00 UTC
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
   ping-supabase:
     runs-on: ubuntu-22.04
     permissions:
-      contents: write # Allows the workflow to push the timestamp commit
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Ping Supabase
+      - name: Execute Active Supabase DB Query
         run: |
+          # Clean URL formatting
+          URL=$(echo "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" | sed 's/\/*$//' | xargs)
+
+          # Query PostgREST OpenAPI schema definition to force a real database engine query
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "${{ secrets.SUPABASE_URL }}/auth/v1/health" \
-            -H "apikey: ${{ secrets.SUPABASE_API_KEY }}")
-          
-          echo "HTTP status: $STATUS"
+            "$URL/rest/v1/?apikey=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" \
+            -H "apikey: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}")
+
+          echo "Supabase DB Query HTTP status: $STATUS"
+
           if [[ "$STATUS" -ne 200 ]]; then
-            echo "Ping failed with status $STATUS"
+            echo "Failed to query Supabase database."
             exit 1
           fi
 
